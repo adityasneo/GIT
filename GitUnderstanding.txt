@@ -1,1 +1,3 @@
-GIT is a version control system
+GIT is a version control system used to keep changes made to the code
+To manage the version changes and revert to previous version
+gives branching and merging
