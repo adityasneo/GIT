@@ -1,0 +1,23 @@
+git config
+git init
+git clone
+git add
+git commit
+git status
+git remote
+git checkout branchname
+git branch
+git push
+git pull
+git merge branchname
+git diff
+git reset
+git revert
+git tag
+git log
+git switch branchname
+git checkout branchname
+git add file-path ---single
+git add file1-path file2-path ---multiple
+git reset ---to unstage a file
+git rebase
