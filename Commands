@@ -1,23 +1,102 @@
-git config
+git config --global user.name "[firstname lastname]"
+git config --global user.email "[valid-email]"
 git init
 git clone
 git add
-git commit
+git commit -m ""
 git status
-git remote
+git remote add alias url
+git fetch
 git checkout branchname
-git branch
+git branch -a --list all branches
+git branch branchname
+git checkout -b branchname
+git branch -d branchname
 git push
 git pull
 git merge branchname
-git diff
-git reset
-git revert
+git diff -- Show changes between working directory and staging area
+git diff --staged  ---> diff of what is staged but not yet commited
+git reset -- undo most recent commit
+git revert -- removes the commit from remote repo
 git tag
-git log
+git log -- show all list of commits
+git log branchB..branchA--show the commits on branchA that are not on branchB
+git rm filename
+git mv path
+.gitignore for ignoring
 git switch branchname
 git checkout branchname
 git add file-path ---single
 git add file1-path file2-path ---multiple
 git reset ---to unstage a file
 git rebase
+git stash -- save changes
+git stash list
+git stash pop -- working from top of stash stack
+git stash drop -- discard changes from top of stash stack
+Inspect history
+git log [-n count] List commit history of current branch. -n count limits list to last
+n commits.
+git log --oneline
+--graph --decorate
+An overview with reference labels and history graph. One
+commit per line.
+git log ref . List commits that are present on the current branch and not
+merged into ref. A ref can be a branch name or a tag name.
+git log .ref List commit that are present on ref and not merged into current
+branch.
+git reflog List operations (e.g. checkouts or commits) made on local
+repository.
+git fetch [remote] Fetch changes from the remote, but not update tracking
+branches.
+git fetch --prune
+[remote]
+Delete remote Refs that were removed from the remote
+repository.
+git pull [remote] Fetch changes from the remote and merge current branch with
+its upstream.
+git push [--tags]
+[remote] Push local changes to the remote. Use --tags to push tags.
+git push -u [remote]
+[branch]
+Push local branch to remote repository. Set its copy as an
+upstream
+git tag List all tags.
+git tag [name]
+[commit sha]
+Create a tag reference named name for current commit. Add
+commit sha to tag a specific commit instead of current one.
+git tag -a [name]
+[commit sha] Create a tag object named name for current commit.
+git tag -d [name] Remove a tag from local repository.
+8 Reverting changes
+git reset [--hard]
+[target reference]
+Switches the current branch to the target reference, leaving
+a difference as an uncommitted change. When --hard is used,
+all changes are discarded. It's easy to lose uncommitted
+changes with --hard.
+git revert [commit sha] Create a new commit, reverting changes from the specified
+commit. It generates an inversion of changes. 
+Synchronizing repositories
+git fetch [remote] Fetch changes from the remote, but not update tracking
+branches.
+git fetch --prune
+[remote]
+Delete remote Refs that were removed from the remote
+repository.
+git pull [remote] Fetch changes from the remote and merge current branch with
+its upstream.
+git push [--tags]
+[remote] Push local changes to the remote. Use --tags to push tags.
+git push -u [remote]
+[branch]
+Push local branch to remote repository. Set its copy as an
+upstream.
+Ignoring files
+cat <EOF > .gitignore
+/logs *
+!logs/.gitkeep
+/tmp
+*.swp
